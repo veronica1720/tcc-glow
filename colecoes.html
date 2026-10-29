@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Coleções Exclusivas - Her Glow</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400;500;600;700;800&family=Montserrat:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+/* ==================== ESTILOS HERDADOS ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #faf6f2;
+    color: #2c2c2c;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* HEADER */
+header {
+    background: rgba(139, 44, 45, 0.97);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: 700;
+    color: #F9E6CF;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logo a:hover { color: #FFD966; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #F9E6CF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #F9E6CF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD966;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active { color: #FFD966; }
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropdown-toggle { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.dropdown-toggle i { font-size: 11px; transition: 0.3s; }
+.dropdown:hover .dropdown-toggle i { transform: rotate(180deg); }
+.dropdown-menu {
+    position: absolute; top: 130%; left: 0; background: #fff; min-width: 230px;
+    border-radius: 18px; overflow: hidden; opacity: 0; visibility: hidden;
+    transform: translateY(-10px); transition: 0.3s ease; box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    z-index: 1000; border: 1px solid #f0d9c1; padding: 10px 0;
+}
+.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu li { list-style: none; }
+.dropdown-menu li a { display: block; padding: 12px 22px; color: #6B4E3A; font-size: 14px; transition: 0.3s; }
+.dropdown-menu li a:hover { background: #F9E6CF; color: #8B2C2D; padding-left: 30px; }
+
+.nav-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.search-box { display: flex; align-items: center; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.1); padding: 10px 18px; border-radius: 50px; }
+.search-box input { border: none; background: transparent; outline: none; color: #fff; width: 180px; font-size: 14px; font-family: 'Montserrat', sans-serif; }
+.search-box input::placeholder { color: rgba(255,255,255,0.8); }
+.search-box button { background: none; border: none; color: #FFD966; cursor: pointer; font-size: 15px; }
+
+.nav-icons { display: flex; align-items: center; gap: 18px; }
+.nav-icons a, .nav-icons .icon-link, .profile-icon { color: #F9E6CF; font-size: 19px; transition: 0.3s; cursor: pointer; background: none; border: none; }
+.nav-icons a:hover, .nav-icons .icon-link:hover, .profile-icon:hover { color: #FFD966; transform: translateY(-2px); }
+
+/* BANNER COLEÇÕES */
+.page-banner {
+    background: linear-gradient(rgba(139,44,45,0.85), rgba(107,31,32,0.85)), url("img/fundoinicio.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    text-align: center;
+    color: #F9E6CF;
+}
+
+.page-banner h1 { font-size: 52px; color: #F9E6CF; margin-bottom: 12px; }
+.page-banner p { font-size: 16px; color: #f4e0c5; max-width: 600px; margin: 0 auto; }
+
+/* SEÇÕES DE COLEÇÕES */
+.collections-container {
+    padding: 70px 0;
+}
+
+.collection-block {
+    margin-bottom: 70px;
+}
+
+.collection-header {
+    background: linear-gradient(135deg, #F9E6CF, #F4E0C5);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 35px;
+    border: 1px solid #f0d9c1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.collection-title h2 {
+    font-size: 32px;
+    color: #8B2C2D;
+    margin-bottom: 8px;
+}
+
+.collection-title p {
+    color: #6B4E3A;
+    font-size: 15px;
+}
+
+.btn-primary-sm {
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: #8B2C2D;
+    color: #F9E6CF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary-sm:hover {
+    background: #6B1F20;
+    box-shadow: 0 8px 20px rgba(139,44,45,0.2);
+}
+
+/* CARDS DE PRODUTOS DAS COLEÇÕES */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #f1e1d3;
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    transition: .35s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(139,44,45,0.18);
+}
+
+.product-img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 19px;
+    margin: 16px 0 8px;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.product-description {
+    font-size: 13px;
+    color: #8B2C2D;
+    text-align: center;
+    padding: 0 18px;
+    opacity: 0.75;
+    margin-bottom: 12px;
+}
+
+.price {
+    text-align: center;
+    font-size: 22px;
+    color: #8B2C2D;
+    font-weight: 700;
+}
+
+.btn-outline {
+    display: inline-block;
+    margin: 16px auto 20px;
+    padding: 10px 26px;
+    border: 1px solid #8B2C2D;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #8B2C2D;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: #8B2C2D;
+    color: #fff;
+}
+
+.subliminar-msg {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 10px;
+    opacity: 0.25;
+    color: #8B2C2D;
+}
+
+/* FOOTER */
+footer {
+    background: #2C241F;
+    color: #ddd;
+    padding: 70px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.footer-col h4 { color: #F9E6CF; margin-bottom: 18px; font-size: 18px; }
+.footer-col p, .footer-col a { color: #CBBAA8; text-decoration: none; line-height: 1.9; font-size: 14px; transition: 0.3s; }
+.footer-col a:hover { color: #FFD966; }
+
+.footer-bottom {
+    border-top: 1px solid #45352d;
+    padding-top: 22px;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .navbar { flex-direction: column; align-items: stretch; }
+    .nav-links, .nav-right { justify-content: center; }
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">Her Glow</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Novidades</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Categorias <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="categoria-vestidos.html">👗 Vestidos</a></li>
+                        <li><a href="categoria-acessorios.html">💍 Acessórios</a></li>
+                        <li><a href="categoria-beleza.html">💄 Beleza</a></li>
+                        <li><a href="categoria-roupas.html">👚 Roupas</a></li>
+                        <li><a href="categoria-lancamentos.html">✨ Lançamentos</a></li>
+                    </ul>
+                </li>
+                <li><a href="colecoes.html" class="active">Coleções</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar produtos..." id="searchInput">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="favoritos.html" class="icon-link"><i class="far fa-heart"></i></a>
+                    <a href="carrinho.html" class="icon-link"><i class="fas fa-shopping-bag"></i></a>
+                    <i class="far fa-user-circle profile-icon" id="openAuthBtn"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="page-banner">
+        <div class="container">
+            <h1>Coleções Exclusivas</h1>
+            <p>Explore nossas seleções temáticas pensadas para cada momento e estilo da mulher sofisticada.</p>
+        </div>
+    </section>
+
+    <section class="collections-container">
+        <div class="container">
+            
+            <!-- COLEÇÃO 1: ESSÊNCIA & LIBERDADE -->
+            <div class="collection-block">
+                <div class="collection-header">
+                    <div class="collection-title">
+                        <h2>Coleção Essência & Liberdade</h2>
+                        <p>Leveza, fluidez e peças que traduzem sua autoconfiança.</p>
+                    </div>
+                    <a href="#" class="btn-primary-sm">Ver Tudo da Coleção</a>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                        <div class="product-img"><img src="img/vindex.jpg" alt="Vestido Liberdade"></div>
+                        <div class="product-info">
+                            <h3>Vestido Liberdade</h3>
+                            <div class="product-description">"A liberdade começa quando você se reconhece como suficiente"</div>
+                            <div class="price">R$ 69,90</div>
+                            <div style="text-align: center;"><a href="#" class="btn-outline buy-btn">Quero me Libertar</a></div>
+                            <div class="subliminar-msg">Você merece ser feliz</div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                        <div class="product-img"><img src="img/rindex.jpg" alt="Vestido Liberdade"></div>
+                        <div class="product-info">
+                            <h3>Vestido Liberdade</h3>
+                            <div class="product-description">"A liberdade começa quando você se reconhece como suficiente"</div>
+                            <div class="price">R$ 99,90</div>
+                            <div style="text-align: center;"><a href="#" class="btn-outline buy-btn">Quero me Libertar</a></div>
+                            <div class="subliminar-msg">Você merece ser feliz</div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                        <div class="product-img"><img src="img/cindex.jpg" alt="Vestido Liberdade"></div>
+                        <div class="product-info">
+                            <h3>Vestido Liberdade</h3>
+                            <div class="product-description">"A liberdade começa quando você se reconhece como suficiente"</div>
+                            <div class="price">R$ 74,90</div>
+                            <div style="text-align: center;"><a href="#" class="btn-outline buy-btn">Quero me Libertar</a></div>
+                            <div class="subliminar-msg">Você merece ser feliz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLEÇÃO 2: NOITES DE GALA -->
+            <div class="collection-block">
+                <div class="collection-header">
+                    <div class="collection-title">
+                        <h2>Coleção Noites de Sofisticação</h2>
+                        <p>Brilho discreto, tecidos finos e cortes elegantes para momentos inesquecíveis.</p>
+                    </div>
+                    <a href="#" class="btn-primary-sm">Ver Tudo da Coleção</a>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                        <div class="product-img"><img src="img/vi2.jpg" alt="Vestido Liberdade"></div>
+                        <div class="product-info">
+                            <h3>Vestido Liberdade</h3>
+                            <div class="product-description">"A liberdade começa quando você se reconhece como suficiente"</div>
+                            <div class="price">R$ 59,90</div>
+                            <div style="text-align: center;"><a href="#" class="btn-outline buy-btn">Quero me Libertar</a></div>
+                            <div class="subliminar-msg">Você merece ser feliz</div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                        <div class="product-img"><img src="img/sindex.jpg" alt="Vestido Liberdade"></div>
+                        <div class="product-info">
+                            <h3>Vestido Liberdade</h3>
+                            <div class="product-description">"A liberdade começa quando você se reconhece como suficiente"</div>
+                            <div class="price">R$ 54,90</div>
+                            <div style="text-align: center;"><a href="#" class="btn-outline buy-btn">Quero me Libertar</a></div>
+                            <div class="subliminar-msg">Você merece ser feliz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Her Glow</h4>
+                <p>Sofisticação, estilo e o poder da mulher moderna traduzidos em coleções de alta costura.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <p><a href="sobre.html">Sobre Nós</a></p>
+                <p><a href="#">Políticas de Privacidade</a></p>
+                <p><a href="#">Termos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Her Glow. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // --- MANIPULAÇÃO DE RELATÓRIO / BOTÕES DE COMPRA ---
+    function generateReport(productName, violenceType) {
+        console.log(`Relatório Interno - Produto clicado: ${productName} | Alerta Associado: ${violenceType}`);
+    }
+
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.product-card');
+            const productName = card.getAttribute('data-name');
+            const typeAttr = card.getAttribute('data-violence');
+            
+            let violenceType = '';
+            switch(typeAttr) {
+                case 'psicologica': violenceType = 'Violência Psicológica'; break;
+                case 'fisica': violenceType = 'Violência Física'; break;
+                case 'verbal': violenceType = 'Violência Verbal'; break;
+                case 'patrimonial': violenceType = 'Violência Patrimonial'; break;
+                case 'moral': violenceType = 'Violência Moral'; break;
+                default: violenceType = 'Violência Doméstica';
+            }
+            
+            generateReport(productName, violenceType);
+        });
+    });
+
+    // --- ACESSO DISCRETO À ÁREA DE ATENDIMENTO ---
+    const logo = document.querySelector('.logo a');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'modo_oculto/denuncia.php';
+        });
+    }
+</script>
+</body>
+</html>

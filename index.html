@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Her Glow - Moda Feminina Sofisticada</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400;500;600;700;800&family=Montserrat:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+/* ==================== RESET E CONFIGURAÇÕES GLOBAIS ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #faf6f2;
+    color: #2c2c2c;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, .logo, .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ==================== HEADER E NAVBAR ==================== */
+header {
+    background: rgba(139, 44, 45, 0.97);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: 700;
+    color: #F9E6CF;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logo a:hover {
+    color: #FFD966;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #F9E6CF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #F9E6CF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD966;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD966;
+}
+
+/* ==================== DROPDOWN ==================== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.dropdown-toggle i {
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 130%;
+    left: 0;
+    background: #fff;
+    min-width: 230px;
+    border-radius: 18px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    z-index: 1000;
+    border: 1px solid #f0d9c1;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 22px;
+    color: #6B4E3A;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #F9E6CF;
+    color: #8B2C2D;
+    padding-left: 30px;
+}
+
+/* ==================== NAV RIGHT ==================== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.search-box:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    width: 180px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-box input::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #FFD966;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* ==================== ÍCONES ==================== */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-icons a,
+.nav-icons .icon-link,
+.profile-icon {
+    color: #F9E6CF;
+    font-size: 19px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.nav-icons a:hover,
+.nav-icons .icon-link:hover,
+.profile-icon:hover {
+    color: #FFD966;
+    transform: translateY(-2px);
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    background-image:
+        linear-gradient(rgba(249,230,207,0.5), rgba(244,224,197,0.5)),
+        url("img/fundoinicio.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 110px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    top: -300px;
+    right: -200px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    color: #8B2C2D;
+    margin-bottom: 22px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #6B4E3A;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 50px;
+    background: #8B2C2D;
+    color: #F9E6CF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 1px solid #8B2C2D;
+}
+
+.btn-primary:hover {
+    background: #6B1F20;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(139,44,45,0.25);
+}
+
+/* ==================== SECTIONS ==================== */
+.destaques-section,
+.why-us {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.section-title {
+    font-size: 42px;
+    text-align: center;
+    color: #8B2C2D;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #6B4E3A;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #8B2C2D;
+    display: block;
+    margin: 14px auto 0;
+    border-radius: 10px;
+}
+
+/* ==================== CARROSSEL ==================== */
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.products-carousel {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 5px 30px;
+    scrollbar-width: thin;
+}
+
+.products-carousel::-webkit-scrollbar {
+    height: 7px;
+}
+
+.products-carousel::-webkit-scrollbar-thumb {
+    background: #8B2C2D;
+    border-radius: 20px;
+}
+
+.products-carousel::-webkit-scrollbar-track {
+    background: #f4e0c5;
+}
+
+.product-card{
+    flex:0 0 280px;
+    min-width:280px;
+    max-width:280px;
+
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid #f1e1d3;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transition:.35s;
+    position:relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(139,44,45,0.18);
+}
+
+.product-img{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    background:#f5f5f5;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.product-card:hover .product-img img{
+    transform:scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 18px 0 10px;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.product-description {
+    font-size: 13px;
+    color: #8B2C2D;
+    text-align: center;
+    padding: 0 18px;
+    opacity: 0.75;
+    margin-bottom: 14px;
+}
+
+.price {
+    text-align: center;
+    font-size: 24px;
+    color: #8B2C2D;
+    font-weight: 700;
+}
+
+.btn-outline {
+    display: inline-block;
+    margin: 18px auto 22px;
+    padding: 10px 28px;
+    border: 1px solid #8B2C2D;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #8B2C2D;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: #8B2C2D;
+    color: #fff;
+}
+
+.subliminar-msg {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 10px;
+    opacity: 0.25;
+    color: #8B2C2D;
+}
+
+/* ==================== BOTÕES CARROSSEL ==================== */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #8B2C2D;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.08);
+    background: #6B1F20;
+}
+
+/* ==================== MODAL ==================== */
+.auth-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-modal.active {
+    display: flex;
+}
+
+.auth-container {
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    animation: modalFadeIn 0.35s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(.94);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.auth-image {
+    flex: 1;
+    min-width: 320px;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(20, 8, 10, 0.10) 0%,
+            rgba(35, 10, 15, 0.35) 40%,
+            rgba(35, 10, 15, 0.85) 100%
+        ),
+        url("img/login-bg.jpg");
+
+    background-size: cover;
+    background-position: 55% center;
+    background-repeat: no-repeat;
+
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding: 50px 35px 55px;
+    text-align: center;
+}
+
+/* Conteúdo sobre a fotografia */
+.auth-image-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.65);
+}
+
+
+/* Remove o ícone da camiseta */
+.auth-image-content i {
+    display: none;
+}
+
+
+/* Mantém o nome Her Glow destacado */
+.auth-image-content h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
+.auth-form {
+    flex: 1;
+    min-width: 320px;
+    padding: 45px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f4e0c5;
+}
+
+.auth-tab {
+    padding-bottom: 12px;
+    font-weight: 600;
+    color: #6B4E3A;
+    cursor: pointer;
+    position: relative;
+}
+
+.auth-tab.active {
+    color: #8B2C2D;
+}
+
+.auth-tab.active::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #8B2C2D;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+.auth-panel {
+    display: none;
+}
+
+.auth-panel.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #6B4E3A;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 50px;
+    border: 1px solid #ead8c7;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #8B2C2D;
+    box-shadow: 0 0 0 4px rgba(139,44,45,0.08);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    background: #8B2C2D;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #6B1F20;
+    transform: translateY(-2px);
+}
+
+.close-auth {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    color: #8B2C2D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* ==================== FEATURES ==================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 35px;
+}
+
+.feature {
+    background: #fff;
+    border-radius: 24px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #f3e4d6;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.feature i {
+    font-size: 50px;
+    color: #8B2C2D;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    color: #8B2C2D;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.feature p {
+    color: #6B4E3A;
+}
+
+/* ==================== NEWSLETTER ==================== */
+.newsletter-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg,#F9E6CF,#F4E0C5);
+}
+
+.newsletter-section h2 {
+    font-size: 40px;
+    color: #8B2C2D;
+    margin-bottom: 15px;
+}
+
+.newsletter-section p {
+    color: #6B4E3A;
+    margin-bottom: 35px;
+}
+
+.news-form {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.news-form input {
+    width: 320px;
+    padding: 15px 22px;
+    border-radius: 50px;
+    border: 1px solid #8B2C2D;
+    outline: none;
+}
+
+.news-form button {
+    padding: 15px 32px;
+    border-radius: 50px;
+    border: none;
+    background: #8B2C2D;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.news-form button:hover {
+    background: #6B1F20;
+    transform: translateY(-2px);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #2C241F;
+    color: #ddd;
+    padding: 70px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.footer-col h4 {
+    color: #F9E6CF;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+
+.footer-col p,
+.footer-col a {
+    color: #CBBAA8;
+    text-decoration: none;
+    line-height: 1.9;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #FFD966;
+}
+
+.footer-bottom {
+    border-top: 1px solid #45352d;
+    padding-top: 22px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-right {
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-image {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin-top: 10px;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 30px;
+    }
+
+    .product-card {
+        min-width: 250px;
+    }
+
+    .auth-form {
+        padding: 30px 22px;
+    }
+}
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">Her Glow</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Novidades</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Categorias <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="categoria-vestidos.html">👗 Vestidos</a></li>
+                        <li><a href="categoria-acessorios.html">💍 Acessórios</a></li>
+                        <li><a href="categoria-beleza.html">💄 Beleza</a></li>
+                        <li><a href="categoria-roupas.html">👚 Roupas</a></li>
+                        <li><a href="categoria-lancamentos.html">✨ Lançamentos</a></li>
+                    </ul>
+                </li>
+                <li><a href="colecoes.html">Coleções</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar produtos..." id="searchInput">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-icons">
+                    <a href="favoritos.html" class="icon-link"><i class="far fa-heart"></i></a>
+                    <a href="carrinho.html" class="icon-link"><i class="fas fa-shopping-bag"></i></a>
+                    <i class="far fa-user-circle profile-icon" id="openAuthBtn" title="Acessar conta"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Elegância que Encanta</h1>
+            <p>Descubra a coleção exclusiva de moda feminina que realça sua beleza natural e poder interior.</p>
+            <a href="#destaques" class="btn-primary">Explorar Coleção</a>
+        </div>
+    </section>
+
+    <section class="destaques-section" id="destaques">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+            <p class="section-subtitle">Peças selecionadas especialmente para você que busca sofisticação e elegância em cada detalhe</p>
+            
+            <div class="products-carousel">
+                <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                    <div class="product-img">
+                        <img src="img/vindex.jpg" alt="Vestido Liberdade">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Liberdade</h3>
+                        <div class="product-description">
+                            "A liberdade começa quando você se reconhece como suficiente"
+                        </div>
+                        <div class="price">R$ 69,90</div>
+                        <div style="text-align: center;">
+                            <a href="#" class="btn-outline buy-btn"> Quero me Libertar </a>
+                        </div>
+                        <div class="subliminar-msg">  </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                    <div class="product-img">
+                        <img src="img/rindex.jpg" alt="Vestido Liberdade">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Liberdade</h3>
+                        <div class="product-description">
+                            "A liberdade começa quando você se reconhece como suficiente"
+                        </div>
+                        <div class="price">R$ 99,90</div>
+                        <div style="text-align: center;">
+                            <a href="#" class="btn-outline buy-btn"> Quero me Libertar </a>
+                        </div>
+                        <div class="subliminar-msg">  </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                    <div class="product-img">
+                        <img src="img/cindex.jpg" alt="Vestido Liberdade">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Liberdade</h3>
+                        <div class="product-description">
+                            "A liberdade começa quando você se reconhece como suficiente"
+                        </div>
+                        <div class="price">R$ 74,90</div>
+                        <div style="text-align: center;">
+                            <a href="#" class="btn-outline buy-btn"> Quero me Libertar </a>
+                        </div>
+                        <div class="subliminar-msg"> </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                    <div class="product-img">
+                        <img src="img/vi2.jpg" alt="Vestido Liberdade">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Liberdade</h3>
+                        <div class="product-description">
+                            "A liberdade começa quando você se reconhece como suficiente"
+                        </div>
+                        <div class="price">R$ 59,90</div>
+                        <div style="text-align: center;">
+                            <a href="#" class="btn-outline buy-btn"> Quero me Libertar </a>
+                        </div>
+                        <div class="subliminar-msg">  </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-name="vestido liberdade" data-violence="psicologica">
+                    <div class="product-img">
+                        <img src="img/sindex.jpg" alt="Vestido Liberdade">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Liberdade</h3>
+                        <div class="product-description">
+                            "A liberdade começa quando você se reconhece como suficiente"
+                        </div>
+                        <div class="price">R$ 54,90</div>
+                        <div style="text-align: center;">
+                            <a href="#" class="btn-outline buy-btn"> Quero me Libertar </a>
+                        </div>
+                        <div class="subliminar-msg"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="scrollLeftBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn" id="scrollRightBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Por Que Escolher Her Glow?</h2>
+            <p class="section-subtitle">Mais do que uma loja, uma experiência de luxo e sofisticação</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <h3>Coleções Exclusivas</h3>
+                    <p>Peças únicas selecionadas para mulheres que valorizam elegância e sofisticação</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Frete Grátis</h3>
+                    <p>Em compras acima de R$ 299 para todo Brasil. Entrega rápida e segura</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Compra Segura</h3>
+                    <p>Ambiente 100% protegido. Seus dados estão sempre seguros conosco</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ribbon"></i>
+                    <h3>Qualidade Premium</h3>
+                    <p>Tecidos nobres e acabamento impecável em cada peça da nossa coleção</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Receba Nossas Novidades</h2>
+            <p>Fique por dentro das últimas tendências e receba ofertas exclusivas</p>
+            <div class="news-form">
+                <input type="email" placeholder="Seu melhor e-mail" id="newsEmail">
+                <button id="subscribeBtn">Inscrever-se</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="authModal" class="auth-modal">
+    <div class="auth-container">
+        <div class="close-auth">&times;</div>
+        <div class="auth-image">
+            <div class="auth-image-content">
+                <i class="fas fa-tshirt"></i>
+                <h3>Her Glow</h3>
+                <p>Moda que transforma<br>Beleza que empodera</p>
+                <p style="margin-top: 20px; font-size: 12px;">Cadastre-se e ganhe 10% OFF na primeira compra</p>
+            </div>
+        </div>
+        <div class="auth-form">
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Login</div>
+                <div class="auth-tab" data-tab="register">Cadastre-se</div>
+            </div>
+            
+            <!-- PAINEL DE LOGIN -->
+            <div id="loginPanel" class="auth-panel active">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Entrar</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; font-size: 12px; color: #6B4E3A;">
+                    <i class="fas fa-shield-alt"></i> Seus dados estão seguros
+                </p>
+            </div>
+
+ <!-- PAINEL DE CADASTRO -->
+<div id="registerPanel" class="auth-panel">
+    <form id="registerForm">
+        <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" id="regNome" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" id="regEmail" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+            <label>CPF</label>
+            <input type="text" id="regCpf" placeholder="000.000.000-00" required>
+        </div>
+        <div class="form-group">
+            <label>Data de Nascimento</label>
+            <input type="date" id="regDataNascimento" required>
+        </div>
+        <div class="form-group">
+            <label>Senha</label>
+            <input type="password" id="regSenha" placeholder="Mínimo 6 caracteres" required minlength="6">
+        </div>
+        <button type="submit" class="auth-btn">Cadastrar</button>
+    </form>
+</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Her Glow</h4>
+                <p>Sofisticação, estilo e o poder da mulher moderna traduzidos em coleções de alta costura.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <p><a href="sobre.html">Sobre Nós</a></p>
+                <p><a href="#">Políticas de Privacidade</a></p>
+                <p><a href="#">Termos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Her Glow. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mensagens de retorno do login e cadastro.
+    function showAlert(message, title = 'Her Glow') {
+        window.alert(`${title}\n\n${message || 'Não foi possível concluir a operação.'}`);
+    }
+
+    // Lê respostas JSON e apresenta erros HTTP/PHP de forma compreensível.
+    async function lerRespostaAutenticacao(res) {
+        const texto = await res.text();
+        let dados;
+        try {
+            dados = JSON.parse(texto);
+        } catch (erro) {
+            console.error('Resposta inesperada do backend:', texto);
+            throw new Error(`O servidor não retornou JSON válido (HTTP ${res.status}). Confira o arquivo PHP e a aba Network.`);
+        }
+        if (!res.ok) {
+            throw new Error(dados.message || `Falha no servidor (HTTP ${res.status}).`);
+        }
+        return dados;
+    }
+
+    // --- GERENCIAMENTO DO CARROSSEL ---
+    const carousel = document.querySelector('.products-carousel');
+    const btnLeft = document.getElementById('scrollLeftBtn');
+    const btnRight = document.getElementById('scrollRightBtn');
+
+    if (carousel && btnLeft && btnRight) {
+        btnLeft.addEventListener('click', () => {
+            carousel.scrollBy({ left: -308, behavior: 'smooth' });
+        });
+        btnRight.addEventListener('click', () => {
+            carousel.scrollBy({ left: 308, behavior: 'smooth' });
+        });
+    }
+
+    // --- MANIPULAÇÃO DE RELATÓRIO / BOTÕES DE COMPRA ---
+    function generateReport(productName, violenceType) {
+        console.log(`Relatório Interno - Produto clicado: ${productName} | Alerta Associado: ${violenceType}`);
+    }
+
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.product-card');
+            const productName = card.getAttribute('data-name');
+            const typeAttr = card.getAttribute('data-violence');
+            
+            let violenceType = '';
+            switch(typeAttr) {
+                case 'psicologica': violenceType = 'Violência Psicológica'; break;
+                case 'fisica': violenceType = 'Violência Física'; break;
+                case 'verbal': violenceType = 'Violência Verbal'; break;
+                case 'patrimonial': violenceType = 'Violência Patrimonial'; break;
+                case 'moral': violenceType = 'Violência Moral'; break;
+                default: violenceType = 'Violência Doméstica';
+            }
+            
+            generateReport(productName, violenceType);
+        });
+    });
+
+    
+// --- ACESSO DISCRETO À ÁREA DE ATENDIMENTO ---
+const logo = document.querySelector('.logo a');
+
+if (logo) {
+    logo.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'modo_oculto/denuncia.php';
+    });
+}
+
+
+    // --- MANIPULAÇÃO DO MODAL DE AUTENTICAÇÃO E CADASTRO ---
+    const authModal = document.getElementById('authModal');
+    const openAuthBtn = document.getElementById('openAuthBtn');
+    const closeAuthBtn = document.querySelector('.close-auth');
+    const authTabs = document.querySelectorAll('.auth-tab');
+    const loginPanel = document.getElementById('loginPanel');
+    const registerPanel = document.getElementById('registerPanel');
+
+    // Abertura automática ao carregar a página (Aba de Cadastro por padrão)
+    window.addEventListener('DOMContentLoaded', () => {
+        if (sessionStorage.getItem('herGlowAuthConcluida') === '1') {
+            sessionStorage.removeItem('herGlowAuthConcluida');
+            return;
+        }
+        switchTab('register');
+        authModal.classList.add('active');
+    });
+
+    // Abrir modal ao clicar no ícone do perfil
+    if (openAuthBtn) {
+        openAuthBtn.addEventListener('click', () => {
+            authModal.classList.add('active');
+        });
+    }
+
+    // Fechar modal ao clicar no ícone X
+    if (closeAuthBtn) {
+        closeAuthBtn.addEventListener('click', () => {
+            authModal.classList.remove('active');
+        });
+    }
+
+    // Fechar modal ao clicar fora do container
+    window.addEventListener('click', (e) => {
+        if (e.target === authModal) {
+            authModal.classList.remove('active');
+        }
+    });
+
+    // Alternar abas entre Login e Cadastro
+    function switchTab(tabName) {
+        authTabs.forEach(tab => {
+            if (tab.getAttribute('data-tab') === tabName) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        if (tabName === 'login') {
+            loginPanel.classList.add('active');
+            registerPanel.classList.remove('active');
+        } else {
+            registerPanel.classList.add('active');
+            loginPanel.classList.remove('active');
+        }
+    }
+
+    authTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.getAttribute('data-tab');
+            switchTab(targetTab);
+        });
+    });
+
+    // Submissão do Formulário de Login
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const senha = document.getElementById('loginPassword').value;
+
+            fetch('backend/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, senha })
+            })
+            .then(lerRespostaAutenticacao)
+            .then(data => {
+                showAlert(data.message || (data.success ? 'Operação realizada com sucesso.' : 'Não foi possível concluir a operação.'), "Her Glow");
+                if (data.success) {
+                    authModal.classList.remove('active');
+                    sessionStorage.setItem('herGlowAuthConcluida', '1');
+                    window.location.reload();
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                showAlert(err.message || 'Erro ao processar login. Verifique se o backend está respondendo.', 'Her Glow');
+            });
+        });
+    }
+
+// --- SUBMISSÃO DO FORMULÁRIO DE CADASTRO (ROTA E PAYLOAD CORRIGIDOS) ---
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const payload = {
+            nome: document.getElementById('regNome').value,
+            email: document.getElementById('regEmail').value,
+            cpf: document.getElementById('regCpf').value,
+            data_nascimento: document.getElementById('regDataNascimento').value,
+            senha: document.getElementById('regSenha').value
+        };
+
+        fetch('backend/cadastrar.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(lerRespostaAutenticacao)
+        .then(data => {
+            showAlert(data.message || (data.success ? 'Operação realizada com sucesso.' : 'Não foi possível concluir a operação.'), "Her Glow");
+            if (data.success) {
+                authModal.classList.remove('active');
+                sessionStorage.setItem('herGlowAuthConcluida', '1');
+                window.location.reload();
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            showAlert(err.message || 'Erro ao realizar cadastro. Verifique o console.', 'Her Glow');
+        });
+    });
+}
+</script>
+</body>
+</html>
